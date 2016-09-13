@@ -5,6 +5,7 @@ public class TicTacToeModel {
 	public int Turncounter;
 	public boolean win;
 	public boolean AllTileFilled;
+	public int TheTurnCount;
 	public TicTacToeModel() {
 		grid = new int[3][3];
 	}
@@ -47,6 +48,14 @@ public class TicTacToeModel {
 			else if(mark.equals("")) grid[row][col] = 0;
 		}
 		Turncounter++;
+	}
+	public void cleartheGrid(){
+		TheTurnCount = 0;
+		for (int i = 0; i<grid.length; i++){
+			for (int j = 0; j < grid.length; j++){
+				grid[i][j]=0;
+			}
+		}
 	}
 	public boolean CheckAllSpacesToBeFilled(){
 		for(int i = 0; i < 3; i++){
