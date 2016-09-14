@@ -90,6 +90,21 @@ public class TicTacToeModel {
 		} 
 		return winMessage;
 	}
+	
+	public String GetWinnerVertically(){
+		if(grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0] && grid[2][0] != 0){
+			winMessage = getMark(0,0);
+		}
+		else if(grid[0][1] == grid[1][1]&& grid[1][1] == grid[2][1] && grid[0][1] != 0 ){
+			winMessage = getMark(1,1);
+		}
+		else if(grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2] && grid[1][2] != 0){
+			winMessage = getMark(1,2);
+		}
+		return winMessage;
+	}
+
+
 	public String ForcetheTie(){
 		for (int i = 0; i < 0; i++){
 			for(int j =0; j < 0; j++){
