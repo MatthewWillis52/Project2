@@ -4,8 +4,10 @@ public class TicTacToeModel {
 	private int[][] grid;
 	public int Turncounter;
 	public boolean win;
+	public String winMessage;
 	public boolean AllTileFilled;
 	public int TheTurnCount;
+	
 	public TicTacToeModel() {
 		grid = new int[3][3];
 	}
@@ -67,6 +69,40 @@ public class TicTacToeModel {
 		}
 		return true;
 	}
+	public String GetWinnerDiagonally(){
+		if(grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && grid[0][0] !=0 || grid[0][2] == grid [1][1] && grid[0][2] == grid[2][0] && grid [0][2] != 0){
+			
+				winMessage = getMark(1,1) ;
+		
+		}
+		return winMessage;
+	} 
+	public String GetWinnerHorizontally(){
+		if(grid[0][0] == grid [0][1] && grid[0][1] == grid[0][2] && grid[0][0] != 0 ){
+			winMessage = getMark(0,0);
+		}
+		else if(grid[1][0] ==  grid[1][1] && grid[1][1] == grid[1][2] && grid[1][1] !=0){
+			winMessage = getMark(1,1);
+		}
+		
+		else if(grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2] && grid[2][1] != 0){
+			winMessage= getMark(2,1);
+		} 
+		return winMessage;
+	}
+	public String ForcetheTie(){
+		for (int i = 0; i < 0; i++){
+			for(int j =0; j < 0; j++){
+				if((getMark(i,j).equals("X") || getMark(i,j).equals("O")) && TheTurnCount == 9){
+					winMessage = "TIE";
+				}
+			}
+		}
+		return winMessage;
+	}
+	
+	
+	
 	
 		
 	

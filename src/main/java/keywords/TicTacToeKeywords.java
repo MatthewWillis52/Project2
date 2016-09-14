@@ -23,7 +23,10 @@ public class TicTacToeKeywords {
     }
     
     public String getWinner() {
-        return "X";
+		model.GetWinnerDiagonally();
+		model.GetWinnerHorizontally();
+		model.ForcetheTie();
+		return model.winMessage;
     }
 }
 
