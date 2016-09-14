@@ -4,18 +4,13 @@ import edu.jsu.mcis.*;
 
 public class TicTacToeKeywords {
     private TicTacToeModel model;
-    private boolean turn;
     
     public void startNewGame() {
         model = new TicTacToeModel();
-        turn = true;
-		model.cleartheGrid();
     }
     
     public void markLocation(int r, int c) {
-        String m = (turn)? "X" : "O";
-        model.makeMark(m, r, c);
-        turn = !turn;
+        model.makeMark(r, c);
     }
     
     public String getMark(int r, int c) {
@@ -23,10 +18,7 @@ public class TicTacToeKeywords {
     }
     
     public String getWinner() {
-		model.GetWinnerDiagonally();
-		model.GetWinnerHorizontally();
-		model.ForcetheTie();
-		return model.winMessage;
+		return model.getWinner();
     }
 }
 
