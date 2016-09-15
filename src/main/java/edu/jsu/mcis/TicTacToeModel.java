@@ -3,7 +3,7 @@ package edu.jsu.mcis;
 public class TicTacToeModel {
 	private int[][] grid;
 	private int turnCounter;
-	
+	public String winMessage = "";
 	public TicTacToeModel() {
 		grid = new int[3][3];
 		turnCounter = 0;
@@ -33,7 +33,6 @@ public class TicTacToeModel {
 	}
 
 	private String getWinnerDiagonally(){
-		String winMessage = "";
 		if(grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && grid[0][0] !=0 || grid[0][2] == grid [1][1] && grid[0][2] == grid[2][0] && grid [0][2] != 0){
 			winMessage = getMark(1,1) ;
 		}
@@ -41,7 +40,6 @@ public class TicTacToeModel {
 	} 
 
 	private String getWinnerHorizontally(){
-		String winMessage = "";
 		if(grid[0][0] == grid [0][1] && grid[0][1] == grid[0][2] && grid[0][0] != 0 ){
 			winMessage = getMark(0,0);
 		}
@@ -56,7 +54,7 @@ public class TicTacToeModel {
 	}
 	
 	private String getWinnerVertically(){
-		String winMessage = "";
+		
 		if(grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0] && grid[2][0] != 0){
 			winMessage = getMark(0,0);
 		}
